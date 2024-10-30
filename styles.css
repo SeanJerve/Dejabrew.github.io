@@ -536,11 +536,11 @@ body {
 
     .schedule {
         position: absolute;
-        top: 30%; /* Adjust as needed */
+        top: 30%; 
         left: 50%;
-        transform: translate(-50%, -50%); /* Center horizontally */
+        transform: translate(-50%, -50%); 
         z-index: 1;
-        text-align: left; /* Align all text to the left */
+        text-align: left; 
     }
     
     .contact-info {
@@ -618,11 +618,6 @@ body {
         margin: 0;
     }
 }
-
-
-
-
-
 
 
 @media (min-width: 426px) and (max-width: 768px) {
@@ -729,18 +724,6 @@ body {
         margin: 0;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -953,4 +936,3 @@ body {
         margin: 0;
     }
 }
-
