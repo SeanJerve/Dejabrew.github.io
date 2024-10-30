@@ -375,8 +375,6 @@ body, html {
 }
 
 
-
-
 @media screen and (min-width: 321px) and (max-width: 375px) {
     body, html {
         margin: 0;
