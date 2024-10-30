@@ -54,12 +54,12 @@ function decreaseQuantity(itemName, itemPrice) {
 function updateOrderForm() {
     const orderDetails = document.getElementById('order-details');
     orderDetails.innerHTML = '';
-    totalPrice = 0; // Reset totalPrice for calculation
+    totalPrice = 0;
 
     for (let item in order) {
         if (order[item].quantity > 0) {
             const { quantity, price } = order[item];
-            totalPrice += price; // Update totalPrice
+            totalPrice += price;
 
             const orderItem = `
                 <div class="order-details">
@@ -75,15 +75,12 @@ function updateOrderForm() {
     document.getElementById('total-price').innerText = `₱ ${totalPrice.toFixed(2)}`;
 }
 
-
-
 function searchMenuItems() {
     const query = document.getElementById("search-bar").value.toLowerCase();
     const menuItems = document.querySelectorAll(".menu-item");
 
     menuItems.forEach(item => {
         const itemName = item.querySelector("h2").textContent.toLowerCase();
-        // Show the item if the query matches the name
         if (itemName.includes(query)) {
             item.style.display = "block";
         } else {
@@ -91,8 +88,6 @@ function searchMenuItems() {
         }
     });
 }
-
-
 
 document.querySelectorAll('.category-tile p').forEach((categoryTitle) => {
     categoryTitle.addEventListener('click', () => {
@@ -110,8 +105,6 @@ document.querySelectorAll('.category-tile p').forEach((categoryTitle) => {
         document.getElementById(sectionId).classList.add('active');
     });
 });
-
-
 
 document.querySelector(".btn-order").addEventListener("click", function() {
     const modal = document.getElementById("thankYouModal");
@@ -157,11 +150,3 @@ function resetOrderForm() {
     document.getElementById('order-details').innerHTML = '';
     document.getElementById('total-price').innerText = '₱0.00';
 }
-
-
-
-
-
-
-
-
