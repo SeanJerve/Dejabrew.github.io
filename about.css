@@ -72,7 +72,7 @@ body, html {
 .about-container h2 {
     color: #895b4a;
     font-family: "WindSong";
-    font-size: 25px;
+    font-size: 40px;
     word-spacing: 5px;
     letter-spacing: 2px;
     margin-top: 2%;
@@ -83,7 +83,7 @@ body, html {
 .about-container strong {
     color: #3b2621;
     font-family: "Prompt";
-    font-size: small;
+    font-size: medium;
     word-spacing: 4px;
     letter-spacing: 1px;
     text-shadow: 2px 2px 20px #3b2621;
@@ -92,7 +92,7 @@ body, html {
 .about-container p {
     color: #895b4a;
     font-family: "Prompt";
-    font-size: small;
+    font-size:medium;
     word-spacing: 3px;
     letter-spacing: 1px;
     text-shadow: 1px 1px 70px #3b2621;
@@ -222,5 +222,678 @@ body, html {
     }
     100% {
         transform: translateY(-50%);
+    }
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .bgpic {
+        width: 100vw;
+        height:100vh;
+        opacity: 0.1; 
+        z-index: 1;
+    }
+
+    .button-group {
+        margin: 0;
+        align-items: flex-end; 
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1%;
+        right: 5%;
+        z-index: 1;
+        width: 100vw;
+        z-index: 3; 
+        
+    }
+    
+    .button-link {
+        text-decoration: none;
+    }
+    
+    .button-container {
+        justify-content: flex-end;
+        align-items: center;
+        white-space: nowrap;
+        margin: 0;
+    }
+    
+    .button-container b {
+        font-size: 1.5rem;
+    }
+    
+    .about-container {
+        position: absolute;
+        text-align: left;
+        margin: 2% 2%;
+        max-width: 100vw;
+        height: 64vh;
+        z-index: 2; 
+        
+    }
+
+    .about-container h1 {
+        font-size: 2rem;
+        margin-top: 2%;
+        margin-bottom: 10%;
+    }
+
+    .about-container h2 {
+        color: #895b4a;
+        font-family: "WindSong";
+        font-size: 1rem;
+        word-spacing: 5px;
+        letter-spacing: 2px;
+        margin-top: 10%;
+        margin-bottom: 2%;
+        text-shadow: 2px 2px 10px #895b4a;
+    }
+
+    .about-container strong {
+        color: #3b2621;
+        font-family: "Prompt";
+        font-size: 0.5rem;
+        word-spacing: 4px;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 20px #3b2621;
+    }
+
+    .about-container p {
+        color: #895b4a;
+        font-family: "Prompt";
+        font-size: 0.5rem;
+        word-spacing: 3px;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 70px #3b2621;
+    }
+
+    .socmed {
+        position: absolute;
+        bottom: 2%; 
+        display: inline-flex; 
+        gap: 0.3rem;
+        z-index: 3;
+    }
+
+    .socmed span {
+        font-size: 0.1rem; 
+        display: flex;
+        align-items: center;  
+        gap: 0.3rem;
+    }
+
+    .socmed i {
+        font-size: 0.5rem;
+        gap: 0.1rem;
+    }
+
+    .socmed span {
+        font-size: 0.2rem; 
+        letter-spacing: 0.1rem;
+        gap: 0.1rem;
+    }
+
+    .decorative-line, .decorative-line2 {
+        width: 100vw;
+        height: 1vh;
+        background: #3b2621; 
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+    }
+    
+    .decorative-line {
+        margin-top: 45vh; 
+    }
+    
+    .decorative-line2 {
+        margin-top: 15vh;
+    }
+
+    .carousel-container {
+        position: absolute;
+        width: 100vw; 
+        height: 30vh; 
+        margin-top: 65vh;
+        z-index: 2;
+        right: 0;
+    }
+}
+
+
+
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .bgpic {
+        width: 100vw;
+        height:100vh;
+        opacity: 0.1; 
+        z-index: 1;
+    }
+
+    .button-group {
+        margin: 0;
+        align-items: flex-end; 
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1%;
+        right: 5%;
+        z-index: 1;
+        width: 100vw;
+        z-index: 3; 
+        
+    }
+    
+    .button-link {
+        text-decoration: none;
+    }
+    
+    .button-container {
+        justify-content: flex-end;
+        align-items: center;
+        white-space: nowrap;
+        margin: 0;
+    }
+    
+    .button-container b {
+        font-size: 1.8rem;
+    }
+    
+    .about-container {
+        position: absolute;
+        text-align: left;
+        margin: 2% 2%;
+        max-width: 100vw;
+        height: 63vh;
+        z-index: 2;
+    }
+
+    .about-container h1 {
+        font-size: 2.5rem;
+        margin-top: 2%;
+        margin-bottom: 10%;
+    }
+
+    .about-container h2 {
+        font-size: 1.2rem;
+        margin-top: 5%;
+        margin-bottom: 2%;
+    }
+
+    .about-container strong {
+        font-size: 0.55rem;
+    }
+
+    .about-container p {
+        font-size: 0.55rem;
+    }
+
+    .socmed {
+        position: absolute;
+        bottom: 2%; 
+        display: inline-flex; 
+        gap: 0.3rem;
+        z-index: 3;
+    }
+
+    .socmed span {
+        font-size: 0.4rem; 
+        display: flex;
+        align-items: center;  
+        gap: 0.3rem;
+    }
+
+    .socmed i {
+        font-size: 0.5rem;
+        gap: 0.1rem;
+    }
+
+    .socmed span {
+        font-size: 0.3rem; 
+        letter-spacing: 0.1rem;
+        gap: 0.1rem;
+    }
+
+    .decorative-line, .decorative-line2 {
+        width: 100vw;
+        height: 1vh;
+        background: #3b2621; 
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+    }
+    
+    .decorative-line {
+        margin-top: 45vh; 
+    }
+    
+    .decorative-line2 {
+        margin-top: 15vh;
+    }
+
+    .carousel-container {
+        position: absolute;
+        width: 100vw; 
+        height: 30vh; 
+        margin-top: 65vh;
+        z-index: 2; 
+        right: 0;
+    }
+}
+
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .bgpic {
+        width: 100vw;
+        height:100vh;
+        opacity: 0.1; 
+        z-index: 1;
+    }
+
+    .button-group {
+        margin: 0;
+        align-items: flex-end; 
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1%;
+        right: 5%;
+        z-index: 1;
+        width: 100vw;
+        z-index: 3; 
+        
+    }
+    
+    .button-link {
+        text-decoration: none;
+    }
+    
+    .button-container {
+        justify-content: flex-end;
+        align-items: center;
+        white-space: nowrap;
+        margin: 0;
+    }
+    
+    .button-container b {
+        font-size: 2rem;
+    }
+    
+    .about-container {
+        position: absolute;
+        text-align: left;
+        margin: 2% 2%;
+        max-width: 100vw;
+        height: 63vh;
+        z-index: 2;
+    }
+
+    .about-container h1 {
+        font-size: 2.8rem;
+        margin-top: 2%;
+        margin-bottom: 10%;
+    }
+
+    .about-container h2 {
+        font-size: 1.4rem;
+        margin-top: 5%;
+        margin-bottom: 2%;
+    }
+
+    .about-container strong {
+        font-size: 0.5rem;
+    }
+
+    .about-container p {
+        font-size: 0.5rem;
+    }
+
+    .socmed {
+        position: absolute;
+        bottom: 2%; 
+        display: inline-flex; 
+        gap: 0.3rem;
+        z-index: 3;
+    }
+
+    .socmed span {
+        font-size: 0.4rem; 
+        display: flex;
+        align-items: center;  
+        gap: 0.3rem;
+    }
+
+    .socmed i {
+        font-size: 0.5rem;
+        gap: 0.1rem;
+    }
+
+    .socmed span {
+        font-size: 0.3rem; 
+        letter-spacing: 0.1rem;
+        gap: 0.1rem;
+    }
+
+    .decorative-line, .decorative-line2 {
+        width: 100vw;
+        height: 1vh;
+        background: #3b2621; 
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+    }
+    
+    .decorative-line {
+        margin-top: 45vh; 
+    }
+    
+    .decorative-line2 {
+        margin-top: 15vh;
+    }
+
+    .carousel-container {
+        position: absolute;
+        width: 99vw; 
+        height: 30vh; 
+        margin-top: 65vh;
+        z-index: 2; 
+        right: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        max-width: 100vw;
+        height: 100vh;
+    }
+    .bgpic {
+        width: 100vw;
+        height:100vh;
+        opacity: 0.1; 
+        z-index: 1;
+    }
+
+    .button-group {
+        margin: 0;
+        align-items: flex-end; 
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1%;
+        right: 5%;
+        z-index: 1;
+        width: 100vw;
+        z-index: 3; 
+        
+    }
+    
+    .button-link {
+        text-decoration: none;
+    }
+    
+    .button-container {
+        justify-content: flex-end;
+        align-items: center;
+        white-space: nowrap;
+        margin: 0;
+    }
+    
+    .button-container b {
+        font-size: 2.5rem;
+    }
+    
+    .about-container {
+        position: absolute;
+        text-align: left;
+        margin: 2% 2%;
+        max-width: 100vw;
+        height: 63vh;
+        z-index: 2;
+    }
+
+    .about-container h1 {
+        font-size: 5rem;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    .about-container h2 {
+        font-size: 1.5rem;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    .about-container strong {
+        font-size: 0.65rem;
+    }
+
+    .about-container p {
+        font-size: 0.65rem;
+    }
+    .socmed {
+        position: absolute;
+        bottom: 1.5%; 
+        left: 65%; 
+        transform: translateX(-50%);
+        display: inline-flex; 
+        gap: 1rem;
+        z-index: 3;
+        width: 100vw;
+    }
+    
+    .socmed span {
+        font-size: 1rem; 
+        display: flex;
+        align-items: center;  
+        gap: 0.3rem;
+    }
+    
+    .socmed i {
+        font-size: 1rem;
+        gap: 0.1rem;
+    }
+    
+    .socmed span {
+        font-size: 0.4rem; 
+        letter-spacing: 0.1rem;
+        gap: 0.1rem;
+    }
+    
+
+
+    .decorative-line, .decorative-line2 {
+        width: 100vw;
+        height: 1vh;
+        background: #3b2621; 
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+    }
+    
+    .decorative-line {
+        margin-top: 45vh; 
+    }
+    
+    .decorative-line2 {
+        margin-top: 15vh;
+    }
+
+    .carousel-container {
+        position: absolute;
+        width: 100vw; 
+        height: 30vh; 
+        margin-top: 65vh;
+        z-index: 2; 
+        right: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .bgpic {
+        width: 100vw;
+        height:100vh;
+        opacity: 0.1; 
+        z-index: 1;
+    }
+
+    .button-group {
+        margin: 0;
+        align-items: flex-end; 
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1%;
+        right: 5%;
+        z-index: 1;
+        width: 100vw;
+        z-index: 3; 
+        
+    }
+    
+    .button-link {
+        text-decoration: none;
+    }
+    
+    .button-container {
+        justify-content: flex-end;
+        align-items: center;
+        white-space: nowrap;
+        margin: 0;
+    }
+    
+    .button-container b {
+        font-size: 2.5rem;
+    }
+    
+    .about-container {
+        position: absolute;
+        text-align: left;
+        margin: 2% 2%;
+        max-width: 100vw;
+        height: 63vh;
+        z-index: 2;
+    }
+
+    .about-container h1 {
+        font-size: 5rem;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    .about-container h2 {
+        font-size: 1.5rem;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    .about-container strong {
+        font-size: 0.65rem;
+    }
+
+    .about-container p {
+        font-size: 0.65rem;
+    }
+    .socmed {
+        position: absolute;
+        bottom: 1.5%; 
+        left: 65%; 
+        transform: translateX(-50%);
+        display: inline-flex; 
+        gap: 1rem;
+        z-index: 3;
+        width: 100vw;
+    }
+    
+    .socmed span {
+        font-size: 1rem; 
+        display: flex;
+        align-items: center;  
+        gap: 0.3rem;
+    }
+    
+    .socmed i {
+        font-size: 1rem;
+        gap: 0.1rem;
+    }
+    
+    .socmed span {
+        font-size: 0.4rem; 
+        letter-spacing: 0.1rem;
+        gap: 0.1rem;
+    }
+    
+
+
+    .decorative-line, .decorative-line2 {
+        width: 100vw;
+        height: 1vh;
+        background: #3b2621; 
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+    }
+    
+    .decorative-line {
+        margin-top: 45vh; 
+    }
+    
+    .decorative-line2 {
+        margin-top: 15vh;
+    }
+
+    .carousel-container {
+        position: absolute;
+        width: 100vw; 
+        height: 30vh; 
+        margin-top: 65vh;
+        z-index: 2; 
+        right: 0;
     }
 }
