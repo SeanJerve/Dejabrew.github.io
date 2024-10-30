@@ -1,0 +1,226 @@
+body, html {
+    background-color: #F0eae7;
+    margin: 0;
+    overflow: hidden;
+    transition: transform 1s ease;
+}
+
+.bgpic {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 66vw; 
+    height: 100vh;
+    opacity: 0.09; 
+    z-index: -1; 
+    object-fit: cover; 
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column; 
+    position: absolute;
+    top: 3%;
+    right: 38.5%;
+    z-index: 1;
+}
+
+.button-link {
+    text-decoration: none; 
+}
+
+.button-container {
+    justify-content: flex-end; 
+    align-items: center; 
+    white-space: nowrap; 
+    margin-bottom: 10px;
+}
+
+.button-container b {
+    color: #3b2621; 
+    font-family: "WindSong";
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 5px 2px 10px #3b2621;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.button-container:hover b {
+    color: #3b2621; 
+    text-shadow: none;
+    z-index: 1;
+}
+
+.about-container {
+    position: absolute;
+    text-align: left;
+    margin-left: 5%;
+    max-width: 1100px;
+}
+
+.about-container h1 {
+    color: #3b2621;
+    font-family: "WindSong";
+    font-size: 100px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    text-shadow: 2px 2px 10px #895b4a;
+}
+
+.about-container h2 {
+    color: #895b4a;
+    font-family: "WindSong";
+    font-size: 25px;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-shadow: 2px 2px 10px #895b4a;
+}
+
+.about-container strong {
+    color: #3b2621;
+    font-family: "Prompt";
+    font-size: small;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 20px #3b2621;
+}
+
+.about-container p {
+    color: #895b4a;
+    font-family: "Prompt";
+    font-size: small;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 70px #3b2621;
+}
+
+.socmed {
+    color: #895b4a;
+    position: fixed;
+    bottom: 8.5%;
+    left: 5%; 
+    display: inline-flex; 
+    gap: 40px;
+    font-size: 14px;
+}
+
+.socmed span {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.socmed i {
+    font-size: 20px;
+    color: #3b2621; 
+    text-shadow: 3px 1px 20px #3b2621;
+}
+
+.socmed span {
+    font-family: "Font Awesome 6 Free";
+    font-size: 12px; 
+    color: #895b4a; 
+    letter-spacing: 2px;
+    text-shadow: 3px 1px 10px #3b2621;
+}
+
+.decorative-line {
+    width: 5px;
+    height: 300%;
+    background:  #3b2621; 
+    position: absolute;
+    right: 33.5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.decorative-line2 {
+    width: 5px;
+    height: 300%;
+    background:  #3b2621; 
+    position: absolute;
+    right: 1.1%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-container {
+    position: fixed;
+    top: 0;
+    right: 1.5%;
+    bottom: 0;
+    width: 616px; 
+    height: 100%; 
+    overflow: hidden; 
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-auto-rows: auto; 
+    gap: 10px; 
+    grid-auto-flow: dense; 
+    animation: scrollVertical 40s linear infinite; 
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 2px 3px 4px #3b2621; 
+}
+
+.size1 {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 450px; 
+}
+
+.size2 {
+    grid-column: span 2; 
+    grid-row: span 1;
+    height: 300px; 
+}
+
+.size3 {
+    grid-column: span 3; 
+    grid-row: span 1; 
+    height: 200px;
+}
+
+.size4 {
+    grid-column: span 4;
+    grid-row: span 2;
+    height: 600px; 
+}
+
+.size5 {
+    grid-column: span 2; 
+    grid-row: span 2;
+    height: 500px;
+}
+
+.size6 {
+    grid-column: span 3;
+    grid-row: span 2;
+    height: 550px;
+}
+
+.size7 {
+    grid-column: span 4;
+    grid-row: span 3;
+    height: 650px;
+}
+
+
+@keyframes scrollVertical {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}

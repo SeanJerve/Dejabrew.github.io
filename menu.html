@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DejaBrew</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Rowdies:wght@300;400;700&family=WindSong:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rowdies:wght@300;400;700&family=WindSong:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&family=WindSong:wght@400;500&display=swap');
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="order-form">
+            <div class="logo">
+                <img src="assets/dejabrew-logo.png" class="dejabrew-logo">
+            </div>
+            <div class="order-title">
+                <h1>Your Orders</h1>
+            </div>
+            <div class="order-list">
+                <div class="order-header">
+                    <div class="order-name">
+                        <h2>Items</h2>
+                    </div>
+                    <div class="order-quantity">
+                        <h2>Qty</h2>
+                    </div>
+                    <div class="order-price">
+                        <h2>Price</h2>
+                    </div>
+                </div>
+                <div id="order-details"></div>
+                <hr class="order-divider">
+                <div class="order-total">
+                    <h2>Total</h2>
+                    <p><strong id="total-price">₱0.00</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="order-button">
+        <button class="btn-order">Order Now</button>
+    </div>
+
+    <div class="thank-you-modal" id="thankYouModal">
+        <div class="thank-you-content">
+            <h2>THANK YOU!</h2>
+            <div id="receipt-details"></div>
+        </div>
+    </div>
+
+    <div class="menu-title">
+        <h1>Savor!</h1>
+    </div>
+
+
+    <div class="button-group">
+        <a href="index.html" class="button-link">
+            <div class="button-container">
+                <b>Home</b>
+            </div>
+        </a>
+    
+        <a href="about.html" class="button-link">
+            <div class="button-container">
+                <b>About Us</b>
+            </div>
+        </a>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search..." onkeyup="searchMenuItems()">
+    </div>
+
+    <div class="decorative-line"></div>
+
+    <div class="category-container">
+        <div class="category-tile">
+
+            <a href="menu.html" class="button-link">
+                <h1>Menu</h1>
+            </a>
+
+            <h2>FOOD</h2>
+            <p onclick="showSection('appetizer')">APPETIZER</p>
+            <p onclick="showSection('wings')">WINGS LOVER</p>
+            <p onclick="showSection('student')">STUDENT MEALS</p>
+            <p onclick="showSection('sandwiches')">SANDWICHES</p>
+            <p onclick="showSection('noodles')">NOODLES</p>
+            <p onclick="showSection('pasta')">PASTA</p>
+    
+            <h2>DRINKS</h2>
+            <p onclick="showSection('milktea')">MILKTEA</p>
+            <p onclick="showSection('shakes')">SHAKES</p>
+            <p onclick="showSection('coffee')">COFFEE</p>
+            <p onclick="showSection('frappes')">FRAPPES</p>
+        </div>
+    </div>
+    
+    <div class="menu-container">
+        <div class="menu-item" data-category="appetizer">
+            <div class="item-box">
+                <img src="assets\menu-pocket\nachos.png" alt="Nachos">
+            </div>
+            <h2>NACHOS</h2>
+            <p class="price">₱. 120.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Nachos', 120.00)">-</button>
+                <span class="quantity" id="quantity-Nachos">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Nachos', 120.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="appetizer">
+            <div class="item-box">
+                <img src="assets\menu-pocket\lumpia.png" alt="Lumpia">
+            </div>
+            <h2>LUMPIA</h2>
+            <p class="price">₱ 89.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Lumpia', 89.00)">-</button>
+                <span class="quantity" id="quantity-Lumpia">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Lumpia', 89.00)">+</button>
+            </div>
+        </div>
+    
+        <div class="menu-item" data-category="wings">
+            <div class="item-box">
+                <img src="assets\menu-pocket\wings.png" alt="Wings 1">
+            </div>
+            <h2>CHICKEN PARMESAN</h2>
+            <p class="price">₱ 199.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Chicken&nbsp;Parmesan', 199.00)">-</button>
+                <span class="quantity" id="quantity-Chicken&nbsp;Parmesan">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Chicken&nbsp;Parmesan', 199.00)">+</button>
+            </div>
+        </div>
+    
+        <div class="menu-item" data-category="student">
+            <div class="item-box">
+                <img src="assets\menu-pocket\chickenpops.png" alt="Chicken&nbsp;Pops&nbsp;Rice">
+            </div>
+            <h2>CHICKEN POPS RICE</h2>
+            <p class="price">₱ 60.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Chicken&nbsp;Pops&nbsp;Rice', 60.00)">-</button>
+                <span class="quantity" id="quantity-Chicken&nbsp;Pops&nbsp;Rice">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Chicken&nbsp;Pops&nbsp;Rice', 60.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="student">
+            <div class="item-box">
+                <img src="assets\menu-pocket\chickenfinger.png" alt="Chicken&nbsp;Finger&nbsp;Rice">
+            </div>
+            <h2>CHICKEN FINGER RICE</h2>
+            <p class="price">₱ 60.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Chicken&nbsp;Finger&nbsp;Rice', 60.00)">-</button>
+                <span class="quantity" id="quantity-Chicken&nbsp;Finger&nbsp;Rice">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Chicken&nbsp;Finger&nbsp;Rice', 60.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="student">
+            <div class="item-box">
+                <img src="assets\menu-pocket\lumpiarice.png" alt="Lumpia&nbsp;Rice">
+            </div>
+            <h2>LUMPIA RICE</h2>
+            <p class="price">₱ 60.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Lumpia&nbsp;Rice', 60.00)">-</button>
+                <span class="quantity" id="quantity-Lumpia&nbsp;Rice">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Lumpia&nbsp;Rice', 60.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="sandwiches">
+            <div class="item-box">
+                <img src="assets\menu-pocket\chicken.png" alt="Chicken&nbsp;Sandwich">
+            </div>
+            <h2>CHICKEN SANDWICH</h2>
+            <p class="price">₱ 99.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Chicken&nbsp;Sandwich', 99.00)">-</button>
+                <span class="quantity" id="quantity-Chicken&nbsp;Sandwich">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Chicken&nbsp;Sandwich', 99.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="sandwiches">
+            <div class="item-box">
+                <img src="assets\menu-pocket\hamncheese.png" alt="Ham&nbsp;&&nbsp;Cheese&nbsp;Sandwich">
+            </div>
+            <h2>HAM & CHEESE SANDWICH</h2>
+            <p class="price">₱ 99.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Ham&nbsp;&&nbsp;Cheese&nbsp;Sandwich', 99.00)">-</button>
+                <span class="quantity" id="quantity-Ham&nbsp;&&nbsp;Cheese&nbsp;Sandwich">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Ham&nbsp;&&nbsp;Cheese&nbsp;Sandwich', 99.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="sandwiches">
+            <div class="item-box">
+                <img src="assets\menu-pocket\koreansandwich.png" alt="Korean&nbsp;Sandwich">
+            </div>
+            <h2>KOREAN SANDWICH</h2>
+            <p class="price">₱ 99.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Korean&nbsp;Sandwich', 99.00)">-</button>
+                <span class="quantity" id="quantity-Korean&nbsp;Sandwich">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Korean&nbsp;Sandwich', 99.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="sandwiches">
+            <div class="item-box">
+                <img src="assets\menu-pocket\clubhouse.png" alt="Clubhouse&nbsp;Sandwich">
+            </div>
+            <h2>CLUBHOUSE SANDWICH</h2>
+            <p class="price">₱ 159.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Clubhouse&nbsp;Sandwich', 159.00)">-</button>
+                <span class="quantity" id="quantity-Clubhouse&nbsp;Sandwich">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Clubhouse&nbsp;Sandwich', 159.00)">+</button>
+            </div>
+        </div>
+    
+        <div class="menu-item" data-category="noodles">
+            <div class="item-box">
+                <img src="assets\menu-pocket\lomisolo.png" alt="Lomi&nbsp;Solo">
+            </div>
+            <h2>LOMI SOLO</h2>
+            <p class="price">₱ 60.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Lomi&nbsp;Solo', 60.00)">-</button>
+                <span class="quantity" id="quantity-Lomi&nbsp;Solo">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Lomi&nbsp;Solo', 60.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="noodles">
+            <div class="item-box">
+                <img src="assets\menu-pocket\lomioverload.png" alt="Lomi&nbsp;Overload">
+            </div>
+            <h2>LOMI OVERLOAD</h2>
+            <p class="price">₱ 149.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Lomi&nbsp;Overload', 149.00)">-</button>
+                <span class="quantity" id="quantity-Lomi&nbsp;Overload">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Lomi&nbsp;Overload', 149.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="noodles">
+            <div class="item-box">
+                <img src="assets\menu-pocket\pansit.png" alt="Pancit&nbsp;Guisado">
+            </div>
+            <h2>PANCIT GUISADO</h2>
+            <p class="price">₱ 199.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Pancit&nbsp;Guisado', 199.00)">-</button>
+                <span class="quantity" id="quantity-Pancit&nbsp;Guisado">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Pancit&nbsp;Guisado', 199.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="noodles">
+            <div class="item-box">
+                <img src="assets\menu-pocket\pansit.png" alt="Bihon&nbsp;Guisado">
+            </div>
+            <h2>BIHON GUISADO</h2>
+            <p class="price">₱ 199.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Bihon&nbsp;Guisado', 199.00)">-</button>
+                <span class="quantity" id="quantity-Bihon&nbsp;Guisado">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Bihon&nbsp;Guisado', 199.00)">+</button>
+            </div>
+        </div>
+    
+        <div class="menu-item" data-category="pasta">
+            <div class="item-box">
+                <img src="assets\menu-pocket\spag.png" alt="Spaghetti">
+            </div>
+            <h2>SPAGHETTI</h2>
+            <p class="price">₱ 99.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Spaghetti', 99.00)">-</button>
+                <span class="quantity" id="quantity-Spaghetti">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Spaghetti', 99.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="pasta">
+            <div class="item-box">
+                <img src="assets\menu-pocket\chickencarbonara.png" alt="Chicken&nbsp;Carbonara">
+            </div>
+            <h2>CHICKEN CARBONARA</h2>
+            <p class="price">₱ 149.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Chicken&nbsp;Carbonara', 149.00)">-</button>
+                <span class="quantity" id="quantity-Chicken&nbsp;Carbonara">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Chicken&nbsp;Carbonara', 149.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="pasta">
+            <div class="item-box">
+                <img src="assets\menu-pocket\aglioeolio.png" alt="Spicy&nbsp;Chicken&nbsp;Aglio&nbsp;e&nbsp;Olio">
+            </div>
+            <h2>SPICY CHICKEN AGLIO e OLIO</h2>
+            <p class="price">₱ 149.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Spicy&nbsp;Chicken&nbsp;Aglio&nbsp;e&nbsp;Olio', 149.00)">-</button>
+                <span class="quantity" id="quantity-Spicy&nbsp;Chicken&nbsp;Aglio&nbsp;e&nbsp;Olio">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Spicy&nbsp;Chicken&nbsp;Aglio&nbsp;e&nbsp;Olio', 149.00)">+</button>
+            </div>
+        </div>
+        
+        <div class="menu-item" data-category="milktea">
+            <div class="item-box">
+                <img src="assets\menu-pocket\blackforest.png" alt="Black&nbsp;Forest">
+            </div>
+            <h2>BLACK FOREST</h2>
+            <p class="price">₱ 59.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Black&nbsp;Forest', 59.00)">-</button>
+                <span class="quantity" id="quantity-Black&nbsp;Forest">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Black&nbsp;Forest', 59.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="milktea">
+            <div class="item-box">
+                <img src="assets\menu-pocket\mocha.png" alt="Mocha">
+            </div>
+            <h2>MOCHA</h2>
+            <p class="price">₱ 59.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Mocha', 59.00)">-</button>
+                <span class="quantity" id="quantity-Mocha">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Mocha', 59.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="milktea">
+            <div class="item-box">
+                <img src="assets\menu-pocket\redvelvet.png" alt="Red&nbsp;Velvet">
+            </div>
+            <h2>RED VELVET</h2>
+            <p class="price">₱ 59.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Red&nbsp;Velvet', 59.00)">-</button>
+                <span class="quantity" id="quantity-Red&nbsp;Velvet">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Red&nbsp;Velvet', 59.00)">+</button>
+            </div>
+        </div>
+    
+        <div class="menu-item" data-category="shakes">
+            <div class="item-box">
+                <img src="assets\menu-pocket\mangoshake.png" alt="Mango">
+            </div>
+            <h2>MANGO</h2>
+            <p class="price">₱ 89.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Mango', 89.00)">-</button>
+                <span class="quantity" id="quantity-Mango">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Mango', 89.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="shakes">
+            <div class="item-box">
+                <img src="assets\menu-pocket\chocolateshake.png" alt="Chocolate">
+            </div>
+            <h2>CHOCOLATE</h2>
+            <p class="price">₱ 89.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Chocolate', 89.00)">-</button>
+                <span class="quantity" id="quantity-Chocolate">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Chocolate', 89.00)">+</button>
+            </div>
+        </div>
+    
+        <div class="menu-item" data-category="coffee">
+            <div class="item-box">
+                <img src="assets\menu-pocket\capuccino.png" alt="Cappuccino">
+            </div>
+            <h2>CAPPUCCINO</h2>
+            <p class="price">₱ 105.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Cappuccino', 105.00)">-</button>
+                <span class="quantity" id="quantity-Cappuccino">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Cappuccino', 105.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="coffee">
+            <div class="item-box">
+                <img src="assets\menu-pocket\caramelmacchiato.png" alt="Caramel&nbsp;Macchiato">
+            </div>
+            <h2>CARAMEL MACCHIATO</h2>
+            <p class="price">₱ 119.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Caramel&nbsp;Macchiato', 119.00)">-</button>
+                <span class="quantity" id="quantity-Caramel&nbsp;Macchiato">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Caramel&nbsp;Macchiato', 119.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="coffee">
+            <div class="item-box">
+                <img src="assets\menu-pocket\hazelnutlatte.png" alt="Hazelnut&nbsp;Latte">
+            </div>
+            <h2>HAZELNUT LATTE</h2>
+            <p class="price">₱ 119.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Hazelnut&nbsp;Latte', 119.00)">-</button>
+                <span class="quantity" id="quantity-Hazelnut&nbsp;Latte">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Hazelnut&nbsp;Latte', 119.00)">+</button>
+            </div>
+        </div>
+    
+        <div class="menu-item" data-category="frappes">
+            <div class="item-box">
+                <img src="assets\menu-pocket\strawberriesncream.png" alt="Strawberries&nbsp;&&nbsp;Cream">
+            </div>
+            <h2>STRAWBERRIES & CREAM</h2>
+            <p class="price">₱ 120.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Strawberries&nbsp;&&nbsp;Cream', 120.00)">-</button>
+                <span class="quantity" id="quantity-Strawberries&nbsp;&&nbsp;Cream">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Strawberries&nbsp;&&nbsp;Cream', 120.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="frappes">
+            <div class="item-box">
+                <img src="assets\menu-pocket\vanilla.png" alt="Vanilla">
+            </div>
+            <h2>VANILLA</h2>
+            <p class="price">₱ 120.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Vanilla', 120.00)">-</button>
+                <span class="quantity" id="quantity-Vanilla">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Vanilla', 120.00)">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="frappes">
+            <div class="item-box">
+                <img src="assets\menu-pocket\hazelnut.png" alt="Hazelnut">
+            </div>
+            <h2>HAZELNUT</h2>
+            <p class="price">₱ 120.00</p>
+            <div class="quantity-container">
+                <button class="qty-button" onclick="decreaseQuantity('Hazelnut', 120.00)">-</button>
+                <span class="quantity" id="quantity-Hazelnut">0</span>
+                <button class="qty-button" onclick="increaseQuantity('Hazelnut', 120.00)">+</button>
+            </div>
+        </div>
+    </div>
+    
+    <img src="assets\menubg.png" class="menubg">
+    
+    <script src="script.js"></script>
+</body>
